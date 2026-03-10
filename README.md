@@ -148,7 +148,7 @@ This project helps businesses:
 
 # 🧑‍💻 Author
 
-**Lokesh Kapgate**
+Lokesh Kapgate
 
 GitHub: https://github.com/LuckyTC123/churn_project  
 LinkedIn: https://www.linkedin.com/in/lokesh-kapgate-lk01 
