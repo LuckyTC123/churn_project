@@ -10,7 +10,10 @@ End-to-end customer churn prediction project including data preprocessing, explo
 > A machine learning project that predicts whether a customer will churn based on behavioral and demographic data.
 
 ---
-
+# 📌 Project Dashboard
+### Home Page
+![Home Page](images/img1.jpg)
+![Home Page](images/img2.jpg)  
 # 📌 Project Overview
 
 Customer churn is a critical issue for subscription-based businesses. This project builds a **machine learning model to predict whether a customer will leave the service**.
