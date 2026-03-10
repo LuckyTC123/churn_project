@@ -1,0 +1,48 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>prediction form</title>
+        <style>
+            body {background-color:floralwhite;}
+            h1{text-align: center;
+            background-color: rgb(47, 12, 247);
+        color: azure;}
+        h2{color:red;
+        text-align: center;    
+        background-color: greenyellow;}
+        .container{
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.1);
+        }
+
+        </style>
+
+    </head>
+    <body>
+        <h1>Predict The Churn</h1>
+         {%if prediction %}
+        <h2>prediction: {{ prediction }}</h2>
+        {%endif%}
+        <div>
+        <form action="/predict" method="post">
+            {% for key, value in features.items()%}
+            <label>{{key}}</label>
+            <select name="{{key}}">
+                {%for v in value%}
+                <option value="{{v}}">{{v}}</option>
+                {%endfor%}
+            </select>
+            <br><br>
+            {% endfor %}
+            <button type="submit">  predict</button>
+        </div>
+         {%if prediction %}
+        <h2>prediction: {{ prediction }}</h2>
+        {%endif%}
+        
+
+        </form>
+    </body>
+</html>

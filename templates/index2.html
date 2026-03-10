@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Form</title>
+
+    <style>
+        body{
+            background-color: floralwhite;
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+        }
+
+        h1{
+            text-align:center;
+            background-color: rgb(47,12,247);
+            color:white;
+            padding:15px;
+        }
+
+        h2{
+            color:red;
+            text-align:center;
+            background-color:greenyellow;
+            padding:10px;
+            border-radius:6px;
+        }
+
+        .container{
+            max-width:600px;
+            margin:40px auto;
+            padding:30px;
+            background:white;
+            border-radius:12px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        label{
+            font-weight:bold;
+            display:block;
+            margin-bottom:5px;
+        }
+
+        select{
+            width:100%;
+            padding:8px;
+            border-radius:6px;
+            border:1px solid #ccc;
+            margin-bottom:15px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background-color:rgb(47,12,247);
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color:rgb(32,8,170);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Predict The Churn</h1>
+
+    <div class="container">
+
+        {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+
+        <form action="/predict" method="post">
+
+            {% for key, value in features.items() %}
+                <label>{{ key }}</label>
+
+                <select name="{{ key }}">
+                    {% for v in value %}
+                        <option value="{{ v }}">{{ v }}</option>
+                    {% endfor %}
+                </select>
+            {% endfor %}
+
+            <button type="submit">Predict</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
